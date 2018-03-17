@@ -5,7 +5,6 @@ import (
 	"regexp"
 	"strconv"
 	"hans/learn/spider/crawler/model"
-	"log"
 )
 
 var ageRe = regexp.MustCompile(`<td><span class="label">年龄：</span>([\d]+)岁</td>`)

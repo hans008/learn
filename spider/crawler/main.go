@@ -3,10 +3,16 @@ package main
 import (
 	"hans/learn/spider/crawler/engine"
 	"hans/learn/spider/crawler/zhenai/parser"
+	"hans/learn/spider/crawler/scheduler"
 )
 
 func main() {
-	engine.Run(engine.Request{
+	e := engine.ConcurrentEngine{
+		Scheduler: &scheduler.SimpleScheduler{},
+		WorkerCount:10,
+	}
+
+	e.Run(engine.Request{
 		Url:        "http://www.zhenai.com/zhenghun",
 		ParserFunc: parser.ParseCityList,
 	})
