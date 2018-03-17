@@ -14,7 +14,7 @@ import (
 )
 
 
-var rateLimiter = time.Tick(100 * time.Millisecond) //100ms
+var rateLimiter = time.Tick(10 * time.Millisecond) //10ms
 
 
 func Fetch(url string) ([]byte, error) {
