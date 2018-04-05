@@ -36,7 +36,7 @@ func Fetch(url string) ([]byte, error) {
 func determinEncoding(r *bufio.Reader) encoding.Encoding {
 	bytes, err := r.Peek(1024)
 	if err != nil {
-		log.Printf("Fetcher error: %v", err)
+		log.Printf("Fetcher error: %v\n", err)
 		return unicode.UTF8
 	}
 
